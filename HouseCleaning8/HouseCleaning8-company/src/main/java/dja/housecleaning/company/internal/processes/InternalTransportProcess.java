@@ -7,8 +7,8 @@ import java.util.Properties;
 
 import org.osgi.service.component.annotations.Component;
 
-import dja.housecleaning.company.Employee;
 import dja.housecleaning.company.internal.HouseCleaning;
+import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.TransportProcess;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
@@ -24,7 +24,7 @@ public class InternalTransportProcess implements TransportProcess {
 	}
 
 	@Override
-	public void goTo(String address, Employee cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
+	public void goTo(String address, Cleaner cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
 		companyVan.load(supplies);
 		companyVan.load(tools);
 		companyVan.addPassenger(cleaner);
@@ -48,4 +48,9 @@ public class InternalTransportProcess implements TransportProcess {
 	public int priority() {
 		return 1;
 	}
+
+//	@Override
+//	public int status() {
+//		return 0;
+//	}
 }

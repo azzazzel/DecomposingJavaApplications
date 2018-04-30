@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.joda.money.Money;
 
-import dja.housecleaning.company.internal.policies.CleaningInstructions;
 import dja.housecleaning.company.internal.policies.PricingPolicy;
+import dja.housecleaning.company.jobpositions.Receptionist;
+import dja.housecleaning.company.processes.CleaningInstructions;
 import dja.housecleaning.company.processes.InsufficientAmountException;
-import dja.housecleaning.company.internal.jobpositions.Receptionist;
 
 public class Ronald implements Receptionist {
 

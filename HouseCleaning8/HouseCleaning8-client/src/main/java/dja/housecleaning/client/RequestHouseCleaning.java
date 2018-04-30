@@ -2,6 +2,7 @@ package dja.housecleaning.client;
 
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import dja.housecleaning.frontoffice.FrontOffice;
 import dja.housecleaning.frontoffice.OrderForm;
@@ -10,41 +11,35 @@ import dja.housecleaning.frontoffice.OrderForm;
 @Component( //
 		property = { //
 				"osgi.command.function=clean", //
+				"osgi.command.function=harryClean", //
+				"osgi.command.function=cleanerClean", //
+				"osgi.command.function=useVan", //
+				"osgi.command.function=useStorage", //
 				"osgi.command.scope=hc" //
 		}, //
 		service = Object.class //
 )
 public class RequestHouseCleaning {
 
-	public static void main(String[] args) {
-		howItWorks();
-		howItShouldNotWork();
-		dontMessWithMyStorage();
-		dontMessWithMyVan();		
-	}
+	@Reference FrontOffice frontOffice;
 	
-	public void clean () {
-		RequestHouseCleaning.howItWorks();
-	}
-	
-	static void howItWorks() {
 		
+	public void clean () {
 		System.out.println("Java version is: " + System.getProperty("java.version"));
 		
 		System.out.println("--------------------");
 		System.out.println("official way ...");
 		System.out.println("--------------------");
-		FrontOffice frontOffice = FrontOffice.PLACE;
 		OrderForm orderForm = new OrderForm();
 		orderForm.setAddress("some street");
 		orderForm.addInstruction("clean the floors");
 		orderForm.addInstruction("clean the windows");
 		orderForm.addInstruction("...");
 		frontOffice.pleaseCleanMyHouse(orderForm, 55, "EUR");
-		
 	}
+	
 
-	static void howItShouldNotWork() {
+	public void harryClean() {
 
 //		// figure out how to prepare proper cleaningInstructions
 //		CleaningInstructions cleaningInstructions = new CleaningInstructions();
@@ -55,16 +50,24 @@ public class RequestHouseCleaning {
 //		System.out.println("--------------------");
 //		HarryHouse harryHouse = HarryHouse.PERSON;
 //		harryHouse.cleanHouse(cleaningInstructions);
-//		
-//		// or any cleaner
+		
+	}
+
+	public void cleanerClean() {
+
+//		// figure out how to prepare proper cleaningInstructions
+//		CleaningInstructions cleaningInstructions = new CleaningInstructions();
+//
+//		// then call any cleaner
 //		System.out.println("--------------------");
 //		System.out.println("call any cleaner ...");
 //		System.out.println("--------------------");
 //		HouseCleaning.COMPANY.getCleaner().cleanHouse(cleaningInstructions);
 		
 	}
-
-	static void dontMessWithMyStorage() {
+	
+	
+	public void useStorage() {
 
 //		Storage storage = HouseCleaning.COMPANY.getStorage();
 //		storage.cleaningSupplies.get(0);
@@ -75,7 +78,7 @@ public class RequestHouseCleaning {
 
 	}
 
-	static void dontMessWithMyVan() {
+	static void useVan() {
 
 //		Van companyVan = HouseCleaning.COMPANY.getCompanyVan();
 //		companyVan.drive("some place");

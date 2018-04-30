@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 
-import dja.housecleaning.company.Employee;
+import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.TransportProcess;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
@@ -13,7 +13,7 @@ import other.things.CleaningTool;
 public class UberTransportProcess implements TransportProcess {
 
 	@Override
-	public void goTo(String address, Employee cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
+	public void goTo(String address, Cleaner cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
 		
 		System.out.println("Order Uber Van!");
 		System.out.println("Load supplies and tools");
