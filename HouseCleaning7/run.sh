@@ -5,8 +5,9 @@ modules=(
 	'./HouseCleaning7-frontoffice/target/HouseCleaning7-frontoffice-0.0.1-SNAPSHOT.jar'
 	'./HouseCleaning7-usecases/target/HouseCleaning7-usecases-0.0.1-SNAPSHOT.jar'
 	'./HouseCleaning7-company/target/HouseCleaning7-company-0.0.1-SNAPSHOT.jar'
-	'./HouseCleaning7-uber-transport/target/HouseCleaning7-uber-transport-0.0.1-SNAPSHOT.jar'
+#	'./HouseCleaning7-uber-transport/target/HouseCleaning7-uber-transport-0.0.1-SNAPSHOT.jar'
 	"$HOME/.m2/repository/org/joda/joda-money/0.12/joda-money-0.12.jar"
+	"$HOME/.m2/repository/org/jline/jline/3.7.0/jline-3.7.0.jar"
 	'../things/target/things-0.0.1-SNAPSHOT.jar'
 )
 

@@ -1,4 +1,4 @@
-package dja.housecleaning.frontoffice;
+package dja.housecleaning.frontoffice.internal;
 
 import java.util.List;
 

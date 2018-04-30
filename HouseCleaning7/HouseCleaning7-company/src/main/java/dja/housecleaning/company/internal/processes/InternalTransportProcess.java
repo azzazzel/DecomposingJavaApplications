@@ -5,9 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-import dja.housecleaning.company.Employee;
 import dja.housecleaning.company.internal.HouseCleaning;
-import dja.housecleaning.company.internal.jobpositions.Cleaner;
+import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.TransportProcess;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
@@ -22,7 +21,7 @@ public class InternalTransportProcess implements TransportProcess {
 	}
 
 	@Override
-	public void goTo(String address, Employee cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
+	public void goTo(String address, Cleaner cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
 		companyVan.load(supplies);
 		companyVan.load(tools);
 		companyVan.addPassenger(cleaner);
@@ -40,6 +39,11 @@ public class InternalTransportProcess implements TransportProcess {
 		}
 
 		return vanIsFunctional;
+	}
+
+	@Override
+	public int priority() {
+		return 1;
 	}
 
 }

@@ -1,12 +1,17 @@
 import dja.housecleaning.company.processes.CleanHouseProcess;
-import dja.housecleaning.company.processes.ReceivePaymentProcess;
+import dja.housecleaning.company.processes.NewOrderProcess;
+import dja.housecleaning.company.processes.PrepareForCleaningProcess;
+import dja.housecleaning.company.processes.TransportProcess;
 
 module dja.housecleaning.usecases {
 	exports dja.housecleaning.usecases;
 
-	requires transitive dja.housecleaning.company;
+	requires dja.housecleaning.company;
 	requires joda.money;
+	requires things;
 	
-	uses ReceivePaymentProcess;
+	uses NewOrderProcess;
 	uses CleanHouseProcess;
+	uses TransportProcess;
+	uses PrepareForCleaningProcess;
 }

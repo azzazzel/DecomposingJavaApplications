@@ -2,6 +2,7 @@ package dja.housecleaning.frontoffice;
 
 import org.joda.money.Money;
 
+import dja.housecleaning.frontoffice.internal.FrontOfficeCleaningRequest;
 import dja.housecleaning.usecases.CleaningRequest;
 import dja.housecleaning.usecases.CustomerUsecases;
 

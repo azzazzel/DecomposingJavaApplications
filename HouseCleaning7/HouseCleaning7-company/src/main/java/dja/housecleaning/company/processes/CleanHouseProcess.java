@@ -1,9 +1,9 @@
 package dja.housecleaning.company.processes;
 
-import java.util.List;
+import dja.housecleaning.company.jobpositions.Cleaner;
 
 public interface CleanHouseProcess {
 
-	void cleanHouse(String address, List<String> instructions);
+	void cleanHouse(Cleaner cleaner, CleaningInstructions cleaningInstructions);
 
 }
