@@ -43,7 +43,7 @@ public class CustomerUsecases {
 				.sorted(Comparator.comparing(TransportProcess::priority))
 				.filter(process -> process.isCurrentlyAvailable())
 				.findFirst()
-				.orElseThrow(() -> new RuntimeException("Uhhh seems like out cleaning process is missing! No way to go to the client 😢"));
+				.orElseThrow(() -> new RuntimeException("Uhhh seems like out transport process is missing! No way to go to the client 😢"));
 		
 		boolean sucessfulPayment = false;
 		do {
