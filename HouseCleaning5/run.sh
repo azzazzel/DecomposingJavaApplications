@@ -9,6 +9,7 @@ modules=(
 	'../things/target/things-0.0.1-SNAPSHOT.jar'
 	)
 	
+. ../java_version.sh
 . ../run_functions.sh
 
 run $1

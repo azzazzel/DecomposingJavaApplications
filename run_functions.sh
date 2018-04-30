@@ -1,20 +1,14 @@
 #!/bin/bash
 
-JAVA_HOME=$JAVA_HOME 
-PATH=$PATH
-
-classpath=$(IFS=: ; echo "${modules[*]}")
 module="dja.housecleaning.client"
 mainClass="dja.housecleaning.client.RequestHouseCleaning"
 
-function setJavaVersion () {
-	VERSION=$1;
-	# Mac OS only! Please atapt for your own OS
-	JAVA_HOME="`/usr/libexec/java_home -v $VERSION`";
-	PATH="`/usr/libexec/java_home -v $VERSION`/bin:$PATH";
+function buildClassPath () {
+	classpath=$(IFS=: ; echo "${modules[*]}")
 }
 
 function run () {
+	buildClassPath;
 	OPTION=$1;
 	case $OPTION in 
 
