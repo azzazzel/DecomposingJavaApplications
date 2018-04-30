@@ -21,6 +21,21 @@
 			<artifactId>HouseCleaning8-other-things-bundle</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+<!-- 		<dependency>
+			<groupId>decomposing.java.apps</groupId>
+			<artifactId>HouseCleaning8-company</artifactId>
+			<version>0.1.0-SNAPSHOT</version>
+		</dependency> -->
+<!--  		<dependency>
+			<groupId>decomposing.java.apps</groupId>
+			<artifactId>HouseCleaning8-usecases</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency> -->
+<!--  		<dependency>
+			<groupId>decomposing.java.apps</groupId>
+			<artifactId>HouseCleaning8-frontoffice</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency> -->
 		<dependency>
 			<groupId>decomposing.java.apps</groupId>
 			<artifactId>HouseCleaning8-uber-transport</artifactId>

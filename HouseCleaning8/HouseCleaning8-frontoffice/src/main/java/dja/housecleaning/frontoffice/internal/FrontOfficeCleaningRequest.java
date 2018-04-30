@@ -47,4 +47,9 @@ public class FrontOfficeCleaningRequest implements CleaningRequest {
 		this.payment = expected;
 	}
 
+//	@Override
+//	public String getCustomerName() {
+//		return "Unknown";
+//	}
+
 }

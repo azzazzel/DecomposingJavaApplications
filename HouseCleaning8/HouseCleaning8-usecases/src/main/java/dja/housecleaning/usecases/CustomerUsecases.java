@@ -64,8 +64,4 @@ public class CustomerUsecases {
 		transportProcess.goTo("office", cleaner, supplies, tools);
 	}
 
-//	public void cleanCustomerHouseForFree (String address, List<String> instructions) {
-//		 CleanHouseProcess cleanHouseProcess = new CleanHouseProcess();
-//		 cleanHouseProcess.cleanHouse(address, instructions);
-//	}
 }
