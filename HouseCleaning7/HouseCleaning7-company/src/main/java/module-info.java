@@ -19,5 +19,4 @@ module dja.housecleaning.company {
 	provides CleanHouseProcess with InternalCleanHouseProcess;
 	provides PrepareForCleaningProcess with InternalPrepareForCleaningProcess;
 
-	uses TransportProcess;
 }
