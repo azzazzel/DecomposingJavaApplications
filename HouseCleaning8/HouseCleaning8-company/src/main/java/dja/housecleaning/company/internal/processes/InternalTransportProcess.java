@@ -7,7 +7,7 @@ import java.util.Properties;
 
 import org.osgi.service.component.annotations.Component;
 
-import dja.housecleaning.company.internal.HouseCleaning;
+import dja.housecleaning.company.internal.assets.Vehicles;
 import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.TransportProcess;
 import other.things.CleaningSupply;
@@ -17,11 +17,7 @@ import other.things.Van;
 @Component
 public class InternalTransportProcess implements TransportProcess {
 
-	Van companyVan;
-
-	public InternalTransportProcess() {
-		companyVan = HouseCleaning.COMPANY.getCompanyVan();
-	}
+	Van companyVan = Vehicles.companyVan;
 
 	@Override
 	public void goTo(String address, Cleaner cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {

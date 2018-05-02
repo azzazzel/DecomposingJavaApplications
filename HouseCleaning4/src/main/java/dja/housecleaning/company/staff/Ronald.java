@@ -9,7 +9,7 @@ import dja.housecleaning.company.policies.PricingPolicy;
 import dja.housecleaning.company.processes.CleaningInstructions;
 import dja.housecleaning.company.processes.InsufficientAmountException;
 
-public class Ronald implements Receptionist {
+class Ronald implements Receptionist {
 
 	public static final Ronald PERSON = new Ronald();
 
@@ -18,6 +18,7 @@ public class Ronald implements Receptionist {
 	
 	@Override
 	public void recievePayment(Money money) throws InsufficientAmountException{
+		System.out.println("Ronald: checking payment");
 		if (money.isLessThan(PricingPolicy.sevicePrice)) {
 			throw new InsufficientAmountException(PricingPolicy.sevicePrice, money);
 		}
@@ -25,7 +26,7 @@ public class Ronald implements Receptionist {
 
 	@Override
 	public CleaningInstructions prepareCleaningInstructions(String address, List<String> instructions) {
-		
+		System.out.println("Ronald: preparing cleaning instructions");
 		CleaningInstructions cleaningInstructions = new CleaningInstructions();
 		cleaningInstructions.address = address;
 		for (String instruction : instructions) {

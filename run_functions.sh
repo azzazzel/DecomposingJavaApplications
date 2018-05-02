@@ -1,7 +1,7 @@
 #!/bin/bash
 
 module="dja.housecleaning.client"
-mainClass="dja.housecleaning.client.RequestHouseCleaning"
+mainClass="dja.housecleaning.client.Client"
 
 function buildClassPath () {
 	classpath=$(IFS=: ; echo "${modules[*]}")

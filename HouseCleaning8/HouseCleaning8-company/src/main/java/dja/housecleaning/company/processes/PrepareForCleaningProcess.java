@@ -3,6 +3,7 @@ package dja.housecleaning.company.processes;
 import java.util.List;
 
 import dja.housecleaning.company.jobpositions.Cleaner;
+import dja.housecleaning.company.shared.CleaningInstructions;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 

@@ -11,7 +11,7 @@ public class Garage {
 	private Garage() {
 	}
 	
-	public Van getMyVan() {
+	public Van getVan() {
 		return myVan;
 	}
 

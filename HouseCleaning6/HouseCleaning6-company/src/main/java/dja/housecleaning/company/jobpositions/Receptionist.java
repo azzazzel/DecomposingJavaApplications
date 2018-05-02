@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.joda.money.Money;
 
-import dja.housecleaning.company.processes.CleaningInstructions;
-import dja.housecleaning.company.processes.InsufficientAmountException;
+import dja.housecleaning.company.shared.CleaningInstructions;
+import dja.housecleaning.company.shared.InsufficientAmountException;
 
 public interface Receptionist {
 

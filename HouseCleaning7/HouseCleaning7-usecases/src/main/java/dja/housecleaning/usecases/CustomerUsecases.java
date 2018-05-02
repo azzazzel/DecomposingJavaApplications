@@ -6,11 +6,11 @@ import java.util.ServiceLoader;
 
 import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.CleanHouseProcess;
-import dja.housecleaning.company.processes.CleaningInstructions;
-import dja.housecleaning.company.processes.InsufficientAmountException;
 import dja.housecleaning.company.processes.NewOrderProcess;
 import dja.housecleaning.company.processes.PrepareForCleaningProcess;
 import dja.housecleaning.company.processes.TransportProcess;
+import dja.housecleaning.company.shared.CleaningInstructions;
+import dja.housecleaning.company.shared.InsufficientAmountException;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 
@@ -41,22 +41,29 @@ public class CustomerUsecases {
 				.orElseThrow(() -> new RuntimeException("Uhhh seems like out transport process is missing! No way to go to the client 😢"));
 		
 		
-		boolean sucessfulPayment = false;
-		do {
-			try {
-				newOrderProcess.checkPayment(cleaningRequest.getPayment());
-				sucessfulPayment = true;
-			} catch (InsufficientAmountException e) {
-				cleaningRequest.fixPayment(e.getExpected(), e.getReceived());
-			}
-		} while (!sucessfulPayment);
+		// check customer's order  
+		try {
+			newOrderProcess.checkPayment(cleaningRequest.getPayment());
+		} catch (InsufficientAmountException e) {
+			cleaningRequest.fixPayment(e.getExpected(), e.getReceived());
+			return;
+		}
+
+		CleaningInstructions cleaningInstructions = newOrderProcess.prepareInstructions(cleaningRequest.getAddress(),
+				cleaningRequest.getInstructions());
 		
-		CleaningInstructions cleaningInstructions = newOrderProcess.prepareInstructions(cleaningRequest.getAddress(), cleaningRequest.getInstructions());
+		// prepare   
 		List<CleaningSupply> supplies = prepareForCleaningProcess.getCleaningSupplies(cleaningInstructions);
 		List<CleaningTool> tools = prepareForCleaningProcess.getCleaningTools(cleaningInstructions);
 		Cleaner cleaner = prepareForCleaningProcess.selectCleaner(cleaningInstructions);
+
+		// send cleaner   
 		transportProcess.goTo(cleaningRequest.getAddress(), cleaner, supplies, tools);
+
+		// clean   
 		cleanHouseProcess.cleanHouse(cleaner, cleaningInstructions);
+
+		// make sure the cleaner can go back   
 		transportProcess.goTo("office", cleaner, supplies, tools);
 	}
 

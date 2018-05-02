@@ -15,4 +15,9 @@ public class CleaningSupply {
 	public boolean isEmpty () {
 		return false;
 	}
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

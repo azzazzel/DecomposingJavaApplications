@@ -11,15 +11,22 @@ public class FrontOffice {
 
 	private FrontOffice() {
 	}
-	
-	public void pleaseCleanMyHouse (OrderForm orderForm, double money, String curency) {
-		 Money payment = Money.parse(curency +  " " + money);	
-		 
-		 CleaningRequest cleaningRequest = new FrontOfficeCleaningRequest(
-				 orderForm.getAddress(), 
-				 orderForm.getInstructions(), 
-				 payment);
-		 
-		 CustomerUsecases.GET.cleanCustomerHouse(cleaningRequest);	
+
+	public void cleanMyHousePlease(OrderForm orderForm, String money) {
+		Money payment = Money.parse(money);
+
+		CleaningRequest cleaningRequest = new FrontOfficeCleaningRequest(orderForm.getAddress(),
+				orderForm.getInstructions(), payment);
+
+		CustomerUsecases.GET.cleanCustomerHouse(cleaningRequest);
 	}
+
+//	public Van borrowVan(String who) {
+//		return Vehicles.companyVan;
+//	}
+//
+//	public List<CleaningTool> borrowTools(String who) {
+//		return Storage.PLACE.getCleaningTools();
+//	}
+
 }

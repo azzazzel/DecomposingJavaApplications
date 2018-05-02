@@ -4,7 +4,7 @@ import org.osgi.service.component.annotations.Component;
 
 import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.CleanHouseProcess;
-import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.shared.CleaningInstructions;
 
 @Component 
 public class InternalCleanHouseProcess implements CleanHouseProcess {

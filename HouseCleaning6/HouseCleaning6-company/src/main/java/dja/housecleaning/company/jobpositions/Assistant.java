@@ -2,7 +2,7 @@ package dja.housecleaning.company.jobpositions;
 
 import java.util.List;
 
-import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.shared.CleaningInstructions;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 
@@ -12,7 +12,7 @@ public interface Assistant {
 
 	List<CleaningTool> getNeededCleaningTools(CleaningInstructions instructions);
 
-	void putCleaningSuppliesToStorage (List<CleaningSupply> cleaningSupplies);
+	void storeCleaningTools(List<CleaningTool> cleaningTools);
 
-	void putCleaningToolsInStorage (List<CleaningTool> cleaningTools);
+	void storeCleaningSupplies(List<CleaningSupply> cleaningSupplies);
 }

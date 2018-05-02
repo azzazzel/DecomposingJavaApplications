@@ -9,9 +9,9 @@ import other.things.Van;
 
 public class Garage {
 
-	private List<CleaningTool> myCleaningTools = new ArrayList<>();
-	private List<CleaningSupply> myCleaningSupplies = new ArrayList<>();
-	private Van myVan = new Van();
+	private List<CleaningTool> cleaningTools = new ArrayList<>();
+	private List<CleaningSupply> leaningSupplies = new ArrayList<>();
+	private Van van = new Van();
 	
 	public static final Garage PLACE = new Garage();
 	
@@ -19,45 +19,42 @@ public class Garage {
 	}
 	
 	public void add (CleaningTool cleaningTool) {
-		myCleaningTools.add(cleaningTool);
+		cleaningTools.add(cleaningTool);
 	}
 
 	public void add (CleaningSupply cleaningSupply) {
-		myCleaningSupplies.add(cleaningSupply);
+		leaningSupplies.add(cleaningSupply);
 	}
 
-	public List<CleaningTool> getMyCleaningTools() {
-		return myCleaningTools;
+	public List<CleaningTool> getCleaningTools() {
+		return cleaningTools;
 	}
 
-	public List<CleaningSupply> getMyCleaningSupplies() {
-		return myCleaningSupplies;
+	public List<CleaningSupply> getCleaningSupplies() {
+		return leaningSupplies;
 	}
 
 	public List<CleaningSupply> getNeededCleaningSupplies(String instructions) {
+		System.out.println("Smart garage: SELECT cleaning supplies based on provided instructions");
 		List<CleaningSupply> neededCleaningSupplies = new ArrayList<>();
-		for (CleaningSupply cleaningSupply : myCleaningSupplies) {
-			if (instructions.contains(cleaningSupply.getName())) {
-				myCleaningSupplies.remove(cleaningSupply);
-				neededCleaningSupplies.add(cleaningSupply);
-			}
+		for (CleaningSupply cleaningSupply : leaningSupplies) {
+			// some filter logic here
+			neededCleaningSupplies.add(cleaningSupply);
 		}
 		return neededCleaningSupplies;
 	}
 
 	public List<CleaningTool> getNeededCleaningTools(String instructions) {
+		System.out.println("Smart garage: SELECT cleaning tools based on provided instructions");
 		List<CleaningTool> neededCleaningTools = new ArrayList<>();
-		for (CleaningTool cleaningTool : myCleaningTools) {
-			if (instructions.contains(cleaningTool.getName())) {
-				myCleaningTools.remove(cleaningTool);
-				neededCleaningTools.add(cleaningTool);
-			}
+		for (CleaningTool cleaningTool : cleaningTools) {
+			neededCleaningTools.add(cleaningTool);
 		}
 		return neededCleaningTools;
 	}
 
-	public Van getMyVan() {
-		return myVan;
+	public Van getVan() {
+		return van;
 	}
 
 	

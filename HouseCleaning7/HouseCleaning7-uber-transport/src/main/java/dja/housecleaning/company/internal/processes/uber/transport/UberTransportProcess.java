@@ -12,9 +12,9 @@ public class UberTransportProcess implements TransportProcess {
 	@Override
 	public void goTo(String address, Cleaner cleaner, List<CleaningSupply> supplies, List<CleaningTool> tools) {
 		
-		System.out.println("Order Uber Van!");
-		System.out.println("Load supplies and tools");
-		System.out.println("Go to " + address);
+		System.out.println("🚗 : Order Uber Van!");
+		System.out.println("🚗 : Load supplies and tools");
+		System.out.println("🚗 : Go to " + address);
 
 	}
 

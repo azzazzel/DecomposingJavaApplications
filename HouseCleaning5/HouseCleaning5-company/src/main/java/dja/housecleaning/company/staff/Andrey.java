@@ -1,66 +1,64 @@
 package dja.housecleaning.company.staff;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import dja.housecleaning.company.HouseCleaning;
 import dja.housecleaning.company.assets.Storage;
 import dja.housecleaning.company.jobpositions.Assistant;
-import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.shared.CleaningInstructions;
 import other.things.CleaningSupply;
-import other.things.CleaningSupplyStore;
 import other.things.CleaningTool;
 
-public class Andrey implements Assistant {
+class Andrey implements Assistant {
 
 	public static final Andrey PERSON = new Andrey();
 
-	Storage storage = HouseCleaning.COMPANY.getStorage();
+	private Storage storage = Storage.PLACE;
 
 	private Andrey() {
 	}
 	
 	@Override
 	public List<CleaningSupply> getNeededCleaningSupplies(CleaningInstructions instructions) {
+		System.out.println("Andrey: pick cleaning supplies based on provided instructions");
 		List<CleaningSupply> neededCleaningSupplies = new ArrayList<>();
-		Iterator<CleaningSupply> cleaningSuppliesIterator = storage.cleaningSupplies.iterator();
-		while (cleaningSuppliesIterator.hasNext()) {
-			// if ( cleaningSupply is needed according to instructions ) {
-				neededCleaningSupplies.add(cleaningSuppliesIterator.next());
-				cleaningSuppliesIterator.remove();
-			//}
+		for (CleaningSupply cleaningSupply : storage.getCleaningSupplies()) {
+			// some filter logic here
+			neededCleaningSupplies.add(cleaningSupply);
 		}
 		return neededCleaningSupplies;
 	}
 
 	@Override
 	public List<CleaningTool> getNeededCleaningTools(CleaningInstructions instructions) {
+		System.out.println("Andrey: pick cleaning tools based on provided instructions");
 		List<CleaningTool> neededCleaningTools = new ArrayList<>();
-		Iterator<CleaningTool> cleaningToolsIterator = storage.cleaningTools.iterator();
-		while (cleaningToolsIterator.hasNext()) {
-			// if ( cleaningTool is needed according to instructions ) {
-				neededCleaningTools.add(cleaningToolsIterator.next());
-				cleaningToolsIterator.remove();
-			//}
+		for (CleaningTool cleaningTool : storage.getCleaningTools()) {
+			// some filter logic here
+			neededCleaningTools.add(cleaningTool);
 		}
 		return neededCleaningTools;
 	}
 
 	@Override
-	public void putCleaningSuppliesToStorage(List<CleaningSupply> cleaningSupplies) {
-		for (CleaningSupply cleaningSupply : cleaningSupplies) {
-			if (cleaningSupply.isEmpty()) {
-				storage.cleaningSupplies.add(CleaningSupplyStore.purchase(cleaningSupply.getName()));
-			} else {
-				storage.cleaningSupplies.add(cleaningSupply);
-			}
-		}
+	public void storeCleaningTools(List<CleaningTool> cleaningTools) {
+		System.out.println("Andrey: putting cleaning tools in storage");
+		//
 	}
 
 	@Override
-	public void putCleaningToolsInStorage(List<CleaningTool> cleaningTools) {
-		storage.cleaningTools.addAll(cleaningTools);
+	public void storeCleaningSupplies(List<CleaningSupply> cleaningSupplies) {
+		System.out.println("Andrey: checking and putting cleaning supplies in storage");
+		for (CleaningSupply cleaningSupply : cleaningSupplies) {
+			if (cleaningSupply.isEmpty()) {
+				// purchase 
+			}
+		}
+		//
 	}
 
+	@Override
+	public String toString() {
+		return "Andrey";
+	}
 }

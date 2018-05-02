@@ -11,4 +11,10 @@ public class CleaningTool {
 	public CleaningTool(String name) {
 		this.name = name;
 	}
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
+
 }
