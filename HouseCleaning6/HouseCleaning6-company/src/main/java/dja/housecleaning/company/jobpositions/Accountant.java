@@ -1,4 +1,4 @@
-package dja.housecleaning.company.internal.jobpositions;
+package dja.housecleaning.company.jobpositions;
 
 import org.joda.money.Money;
 

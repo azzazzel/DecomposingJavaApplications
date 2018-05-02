@@ -3,9 +3,9 @@ package dja.housecleaning.company.internal.staff;
 import org.joda.money.Money;
 
 import dja.housecleaning.company.internal.HouseCleaning;
-import dja.housecleaning.company.internal.jobpositions.Accountant;
-import dja.housecleaning.company.internal.policies.CleaningInstructions;
-import dja.housecleaning.company.internal.jobpositions.Cleaner;
+import dja.housecleaning.company.jobpositions.Accountant;
+import dja.housecleaning.company.jobpositions.Cleaner;
+import dja.housecleaning.company.processes.CleaningInstructions;
 
 public class HarryHouse implements Cleaner, Accountant {
 

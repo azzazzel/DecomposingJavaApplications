@@ -4,5 +4,6 @@ module dja.housecleaning.usecases {
 
 	requires dja.housecleaning.company;
 	requires joda.money;
+	requires things;
 
 }

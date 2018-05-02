@@ -1,8 +1,8 @@
-package dja.housecleaning.company.internal.jobpositions;
+package dja.housecleaning.company.jobpositions;
 
 import java.util.List;
 
-import dja.housecleaning.company.internal.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 

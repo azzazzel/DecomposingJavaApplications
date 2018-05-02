@@ -1,4 +1,4 @@
-package dja.housecleaning.company.internal.policies;
+package dja.housecleaning.company.processes;
 
 import java.util.LinkedList;
 import java.util.List;

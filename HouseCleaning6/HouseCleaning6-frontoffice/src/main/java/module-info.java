@@ -5,5 +5,4 @@ module dja.housecleaning.frontoffice {
 
 	requires dja.housecleaning.usecases;
 	requires joda.money;
-
 }
