@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.joda.money.Money;
 
-import dja.housecleaning.company.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.processes.InsufficientAmountException;
 
 public interface Receptionist {
 
-	boolean recievePayment(Money money);
+	void recievePayment(Money money) throws InsufficientAmountException;
 	
 	CleaningInstructions prepareCleaningInstructions(String address, List<String> instructions);
 	

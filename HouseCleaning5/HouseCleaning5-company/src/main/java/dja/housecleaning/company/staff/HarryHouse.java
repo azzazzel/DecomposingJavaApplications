@@ -5,7 +5,7 @@ import org.joda.money.Money;
 import dja.housecleaning.company.HouseCleaning;
 import dja.housecleaning.company.jobpositions.Accountant;
 import dja.housecleaning.company.jobpositions.Cleaner;
-import dja.housecleaning.company.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
 
 public class HarryHouse implements Cleaner, Accountant {
 
