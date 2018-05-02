@@ -9,12 +9,12 @@ public class Receptionist {
 	private Receptionist() {
 	}
 	
-	public void cleanMyHousePlease (CleanOrderForm orderForm, double money) {
+	public void pleaseCleanMyHouse (OrderForm orderForm, double money) {
 		HarryHouse.PERSON.cleanHouseOrder(orderForm.getAddress(), orderForm.instructions, money);
 	}	
 
-	public CleanOrderForm getOrderForm () {
-		return new CleanOrderForm();
+	public OrderForm getOrderForm () {
+		return new OrderForm();
 	}	
 
 }

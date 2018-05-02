@@ -1,6 +1,6 @@
 package dja.housecleaning.company.jobpositions;
 
-import dja.housecleaning.company.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
 
 public interface Cleaner {
 

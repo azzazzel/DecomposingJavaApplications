@@ -7,7 +7,7 @@ import java.util.List;
 import dja.housecleaning.company.HouseCleaning;
 import dja.housecleaning.company.assets.Storage;
 import dja.housecleaning.company.jobpositions.Assistant;
-import dja.housecleaning.company.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
 import other.things.CleaningSupply;
 import other.things.CleaningSupplyStore;
 import other.things.CleaningTool;

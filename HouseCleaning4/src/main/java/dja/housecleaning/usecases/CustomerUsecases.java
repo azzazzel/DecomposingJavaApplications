@@ -2,25 +2,45 @@ package dja.housecleaning.usecases;
 
 import java.util.List;
 
-import org.joda.money.Money;
-
+import dja.housecleaning.company.jobpositions.Cleaner;
 import dja.housecleaning.company.processes.CleanHouseProcess;
-import dja.housecleaning.company.processes.ReceivePaymentProcess;
+import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.processes.InsufficientAmountException;
+import dja.housecleaning.company.processes.NewOrderProcess;
+import dja.housecleaning.company.processes.PrepareForCleaningProcess;
+import dja.housecleaning.company.processes.TransportProcess;
+import other.things.CleaningSupply;
+import other.things.CleaningTool;
 
 public class CustomerUsecases {
 
 	public static CustomerUsecases GET = new CustomerUsecases();
 	
-	public void cleanCustomerHouse (Money money, String address, List<String> instructions) {
-		 ReceivePaymentProcess receivePaymentProcess  = new ReceivePaymentProcess();
-		 if (receivePaymentProcess.process(money)) {
-			 CleanHouseProcess cleanHouseProcess = new CleanHouseProcess();
-			 cleanHouseProcess.cleanHouse(address, instructions);
-		 }
+	public void cleanCustomerHouse (CleaningRequest cleaningRequest) {
+		 
+		 NewOrderProcess newOrderProcess = new NewOrderProcess();
+		 PrepareForCleaningProcess prepareForCleaningProcess = new PrepareForCleaningProcess();
+		 CleanHouseProcess cleanHouseProcess = new CleanHouseProcess();
+		 TransportProcess transportProcess = new TransportProcess();
+		 
+			boolean sucessfulPayment = false;
+			do {
+				try {
+					newOrderProcess.checkPayment(cleaningRequest.getPayment());
+					sucessfulPayment = true;
+				} catch (InsufficientAmountException e) {
+					cleaningRequest.fixPayment(e.getExpected(), e.getReceived());
+				}
+			} while (!sucessfulPayment);
+			
+			CleaningInstructions cleaningInstructions = newOrderProcess.prepareInstructions(cleaningRequest.getAddress(), cleaningRequest.getInstructions());
+			List<CleaningSupply> supplies = prepareForCleaningProcess.getCleaningSupplies(cleaningInstructions);
+			List<CleaningTool> tools = prepareForCleaningProcess.getCleaningTools(cleaningInstructions);
+			Cleaner cleaner = prepareForCleaningProcess.selectCleaner(cleaningInstructions);
+			transportProcess.goTo(cleaningRequest.getAddress(), cleaner, supplies, tools);
+			cleanHouseProcess.cleanHouse(cleaner, cleaningInstructions);
+			transportProcess.goTo("office", cleaner, supplies, tools);
 	}
 
-//	public void cleanCustomerHouseForFree (String address, List<String> instructions) {
-//		 CleanHouseProcess cleanHouseProcess = new CleanHouseProcess();
-//		 cleanHouseProcess.cleanHouse(address, instructions);
-//	}
+
 }

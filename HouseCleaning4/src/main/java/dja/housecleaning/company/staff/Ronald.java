@@ -5,8 +5,9 @@ import java.util.List;
 import org.joda.money.Money;
 
 import dja.housecleaning.company.jobpositions.Receptionist;
-import dja.housecleaning.company.policies.CleaningInstructions;
 import dja.housecleaning.company.policies.PricingPolicy;
+import dja.housecleaning.company.processes.CleaningInstructions;
+import dja.housecleaning.company.processes.InsufficientAmountException;
 
 public class Ronald implements Receptionist {
 
@@ -16,11 +17,10 @@ public class Ronald implements Receptionist {
 	}
 	
 	@Override
-	public boolean recievePayment(Money money) {
-		if (!money.isLessThan(PricingPolicy.sevicePrice)) {
-			return true;
+	public void recievePayment(Money money) throws InsufficientAmountException{
+		if (money.isLessThan(PricingPolicy.sevicePrice)) {
+			throw new InsufficientAmountException(PricingPolicy.sevicePrice, money);
 		}
-		return false;
 	}
 
 	@Override

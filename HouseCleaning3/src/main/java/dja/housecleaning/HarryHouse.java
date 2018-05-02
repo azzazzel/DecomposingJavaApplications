@@ -29,6 +29,7 @@ public class HarryHouse {
 			
 	public void cleanHouseOrder (String address, String instructions, double money) {
 		if (money < 100) {
+			System.out.println("You need to pay me more!");
 			return;
 		}
 		Assistant assistant = Assistant.PERSON;

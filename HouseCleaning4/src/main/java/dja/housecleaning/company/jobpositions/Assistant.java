@@ -2,7 +2,7 @@ package dja.housecleaning.company.jobpositions;
 
 import java.util.List;
 
-import dja.housecleaning.company.policies.CleaningInstructions;
+import dja.housecleaning.company.processes.CleaningInstructions;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 

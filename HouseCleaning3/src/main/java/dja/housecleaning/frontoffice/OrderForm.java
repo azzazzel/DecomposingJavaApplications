@@ -1,6 +1,6 @@
 package dja.housecleaning.frontoffice;
 
-public class CleanOrderForm {
+public class OrderForm {
 
 	String address;
 	
