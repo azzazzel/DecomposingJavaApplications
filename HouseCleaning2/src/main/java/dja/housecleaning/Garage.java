@@ -26,6 +26,14 @@ public class Garage {
 		myCleaningSupplies.add(cleaningSupply);
 	}
 
+	public List<CleaningTool> getMyCleaningTools() {
+		return myCleaningTools;
+	}
+
+	public List<CleaningSupply> getMyCleaningSupplies() {
+		return myCleaningSupplies;
+	}
+
 	public List<CleaningSupply> getNeededCleaningSupplies(String instructions) {
 		List<CleaningSupply> neededCleaningSupplies = new ArrayList<>();
 		for (CleaningSupply cleaningSupply : myCleaningSupplies) {
