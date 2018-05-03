@@ -2,15 +2,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>dja</groupId>
+	<groupId>decomposing.java.apps</groupId>
 	<artifactId>HouseCleaning3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>other</groupId>
 			<artifactId>things</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.joda</groupId>
+			<artifactId>joda-money</artifactId>
+			<version>0.12</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jline</groupId>
@@ -33,4 +39,10 @@
 	</build>
 
 
+	<modules>
+		<module>HouseCleaning3-client</module>
+		<module>HouseCleaning3-front</module>
+		<module>HouseCleaning3-company</module>
+		<module>HouseCleaning3-assets</module>
+	</modules>
 </project>

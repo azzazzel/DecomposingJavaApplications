@@ -1,0 +1,2 @@
+
+package dja.housecleaning.assets;
