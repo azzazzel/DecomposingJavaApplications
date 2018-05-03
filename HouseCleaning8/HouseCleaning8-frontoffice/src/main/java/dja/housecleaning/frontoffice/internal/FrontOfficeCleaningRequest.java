@@ -39,17 +39,7 @@ public class FrontOfficeCleaningRequest implements CleaningRequest {
 	@Override
 	public void fixPayment(Money expected, Money received) {
 		
-		System.out.println("Recived " + received + " but expected " + expected);
-		System.out.println("Asking the customer to adjust payment");
-		// ...
-		System.out.println("Customer paid proper amount");
-		
-		this.payment = expected;
+		System.out.println("Front office: Recived " + received + " but expected " + expected + "!");
 	}
-
-//	@Override
-//	public String getCustomerName() {
-//		return "Unknown";
-//	}
 
 }
