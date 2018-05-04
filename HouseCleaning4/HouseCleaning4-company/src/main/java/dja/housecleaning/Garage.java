@@ -2,7 +2,7 @@ package dja.housecleaning;
 
 import other.things.Van;
 
-public class Garage {
+class Garage {
 
 	private Van myVan = new Van();
 	

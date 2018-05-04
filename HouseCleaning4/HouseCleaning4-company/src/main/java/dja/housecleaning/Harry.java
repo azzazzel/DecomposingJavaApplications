@@ -1,13 +1,10 @@
 package dja.housecleaning;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dja.housecleaning.backoffice.Andrey;
-import dja.housecleaning.backoffice.Storage;
 import other.things.BookkeepingSystem;
 import other.things.CleaningSupply;
-import other.things.CleaningSupplyStore;
 import other.things.CleaningTool;
 import other.things.Van;
 
@@ -65,7 +62,7 @@ public class Harry {
 	public List<CleaningTool> borrowTools (String who) {
 		if ("friend".equals(who)) {
 			System.out.println("Harry: Here are my 🛠️");
-			return Storage.PLACE.getCleaningTools();
+			return Andrey.PERSON.getCleaningTools();
 		}
 		System.out.println("Harry: I'm sorry but I don't know you!");
 		return null;

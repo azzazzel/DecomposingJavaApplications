@@ -18,14 +18,15 @@ public class Ronald {
 		return new OrderForm();
 	}	
 
-//	public Van borrowVan (String who) {
+//	public Van borrowVan(String who) {
 //		return Garage.PLACE.getVan();
+////		return Harry.PERSON.borrowVan(who);
 //	}
 //
-//	public List<CleaningTool> borrowTools (String who) {
+//	public List<CleaningTool> borrowTools(String who) {
 //		return Storage.PLACE.getCleaningTools();
-//	}
-	
+////		return Andrey.PERSON.getCleaningTools();
+//	}	
 
 	@Override
 	public String toString() {

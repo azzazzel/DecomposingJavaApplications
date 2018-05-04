@@ -49,6 +49,10 @@ public class Andrey {
 		}
 		//
 	}
+
+	public  List<CleaningTool> getCleaningTools () {
+		return storage.getCleaningTools();
+	}
 	
 	@Override
 	public String toString() {

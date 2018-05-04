@@ -7,7 +7,7 @@ import other.things.CleaningSupply;
 import other.things.CleaningSupplyStore;
 import other.things.CleaningTool;
 
-public class Storage {
+class Storage {
 
 	private List<CleaningTool> cleaningTools = new ArrayList<>();
 	private List<CleaningSupply> cleaningSupplies = new ArrayList<>();
