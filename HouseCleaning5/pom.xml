@@ -7,6 +7,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>other</groupId>
+			<artifactId>things</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.joda</groupId>
+			<artifactId>joda-money</artifactId>
+			<version>0.12</version>
+		</dependency>
+	</dependencies>
+
 	<modules>
 		<module>HouseCleaning5-company</module>
 		<module>HouseCleaning5-usecases</module>

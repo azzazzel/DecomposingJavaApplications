@@ -1,4 +1,4 @@
-package dja.housecleaning.company.policies;
+package dja.housecleaning.company.shared;
 
 import org.joda.money.Money;
 

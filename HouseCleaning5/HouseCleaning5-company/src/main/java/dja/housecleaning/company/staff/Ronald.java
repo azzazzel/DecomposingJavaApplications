@@ -5,9 +5,9 @@ import java.util.List;
 import org.joda.money.Money;
 
 import dja.housecleaning.company.jobpositions.Receptionist;
-import dja.housecleaning.company.policies.PricingPolicy;
 import dja.housecleaning.company.shared.CleaningInstructions;
 import dja.housecleaning.company.shared.InsufficientAmountException;
+import dja.housecleaning.company.shared.PricingPolicy;
 
 class Ronald implements Receptionist {
 
