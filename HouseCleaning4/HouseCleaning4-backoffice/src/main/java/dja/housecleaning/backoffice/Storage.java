@@ -12,7 +12,7 @@ class Storage {
 	private List<CleaningTool> cleaningTools = new ArrayList<>();
 	private List<CleaningSupply> cleaningSupplies = new ArrayList<>();
 
-	public static final Storage PLACE = new Storage();
+	static final Storage PLACE = new Storage();
 
 	private Storage() {
 		cleaningTools.add(new CleaningTool("vaccume cleaner"));
@@ -25,11 +25,11 @@ class Storage {
 		// ... 
 	}
 
-	public List<CleaningTool> getCleaningTools() {
+	List<CleaningTool> getCleaningTools() {
 		return cleaningTools;
 	}
 
-	public List<CleaningSupply> getCleaningSupplies() {
+	List<CleaningSupply> getCleaningSupplies() {
 		return cleaningSupplies;
 	}
 

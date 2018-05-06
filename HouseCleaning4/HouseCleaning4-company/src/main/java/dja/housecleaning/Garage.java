@@ -6,12 +6,12 @@ class Garage {
 
 	private Van myVan = new Van();
 	
-	public static final Garage PLACE = new Garage();
+	static final Garage PLACE = new Garage();
 	
 	private Garage() {
 	}
 	
-	public Van getVan() {
+	Van getVan() {
 		return myVan;
 	}
 
