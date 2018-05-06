@@ -1,6 +1,12 @@
 package dja.housecleaning.front;
 
+import java.util.List;
+
+import dja.housecleaning.assets.Garage;
+import dja.housecleaning.assets.Storage;
 import dja.housecleaning.company.Harry;
+import other.things.CleaningTool;
+import other.things.Van;
 
 public class Ronald {
 
@@ -18,13 +24,13 @@ public class Ronald {
 		return new OrderForm();
 	}	
 
-//	public Van borrowVan (String who) {
-//		return Garage.PLACE.getVan();
-//	}
-//
-//	public List<CleaningTool> borrowTools (String who) {
-//		return Storage.PLACE.getCleaningTools();
-//	}
+	public Van borrowVan (String who) {
+		return Garage.PLACE.getVan();
+	}
+
+	public List<CleaningTool> borrowTools (String who) {
+		return Storage.PLACE.getCleaningTools();
+	}
 	
 
 	@Override

@@ -7,16 +7,16 @@ import dja.housecleaning.assets.Storage;
 import other.things.CleaningSupply;
 import other.things.CleaningTool;
 
-public class Andrey {
+class Andrey {
 	
 	Storage storage = Storage.PLACE;
 	
-	public static final Andrey PERSON = new Andrey();
+	static final Andrey PERSON = new Andrey();
 
 	private Andrey() {
 	}
 	
-	public List<CleaningSupply> getNeededCleaningSupplies(String instructions) {
+	List<CleaningSupply> getNeededCleaningSupplies(String instructions) {
 		System.out.println("Andrey: pick cleaning supplies based on provided instructions");
 		List<CleaningSupply> neededCleaningSupplies = new ArrayList<>();
 		for (CleaningSupply cleaningSupply : storage.getCleaningSupplies()) {
@@ -26,7 +26,7 @@ public class Andrey {
 		return neededCleaningSupplies;
 	}
 
-	public List<CleaningTool> getNeededCleaningTools(String instructions) {
+	List<CleaningTool> getNeededCleaningTools(String instructions) {
 		System.out.println("Andrey: pick cleaning tools based on provided instructions");
 		List<CleaningTool> neededCleaningTools = new ArrayList<>();
 		for (CleaningTool cleaningTool : storage.getCleaningTools()) {
@@ -36,12 +36,12 @@ public class Andrey {
 		return neededCleaningTools;
 	}
 	
-	public void storeCleaningTools(List<CleaningTool> cleaningTools) {
+	void storeCleaningTools(List<CleaningTool> cleaningTools) {
 		System.out.println("Andrey: putting cleaning tools in storage");
 		//
 	}
 
-	public void storeCleaningSupplies(List<CleaningSupply> cleaningSupplies) {
+	void storeCleaningSupplies(List<CleaningSupply> cleaningSupplies) {
 		System.out.println("Andrey: checking and putting cleaning supplies in storage");
 		for (CleaningSupply cleaningSupply : cleaningSupplies) {
 			if (cleaningSupply.isEmpty()) {
