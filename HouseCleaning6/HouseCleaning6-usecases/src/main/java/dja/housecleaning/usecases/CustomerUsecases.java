@@ -22,6 +22,9 @@ public class CustomerUsecases {
 		PrepareForCleaningProcess prepareForCleaningProcess = new PrepareForCleaningProcess();
 		CleanHouseProcess cleanHouseProcess = new CleanHouseProcess();
 		TransportProcess transportProcess = new TransportProcess();
+		if (!transportProcess.isVanFunctional()) {
+			throw new RuntimeException("Uhhh seems like our van is broken! No way to go to the client 😢");
+		}
 
 		// check customer's order  
 		try {
