@@ -7,7 +7,7 @@ import other.things.CleaningSupply;
 import other.things.CleaningTool;
 import other.things.Van;
 
-public class Garage {
+class Garage {
 
 	private List<CleaningTool> cleaningTools = new ArrayList<>();
 	private List<CleaningSupply> leaningSupplies = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Garage {
 	}
 
 	public List<CleaningSupply> getNeededCleaningSupplies(String instructions) {
-		System.out.println("Smart garage: SELECT cleaning supplies based on provided instructions");
+		System.out.println("Smart garage: SELECT cleaning supplies FROM garage WHERE supplies LIKE provided instructions");
 		List<CleaningSupply> neededCleaningSupplies = new ArrayList<>();
 		for (CleaningSupply cleaningSupply : leaningSupplies) {
 			// some filter logic here
@@ -45,7 +45,7 @@ public class Garage {
 	}
 
 	public List<CleaningTool> getNeededCleaningTools(String instructions) {
-		System.out.println("Smart garage: SELECT cleaning tools based on provided instructions");
+		System.out.println("Smart garage: SELECT cleaning tools FROM garage WHERE tools LIKE provided instructions");
 		List<CleaningTool> neededCleaningTools = new ArrayList<>();
 		for (CleaningTool cleaningTool : cleaningTools) {
 			neededCleaningTools.add(cleaningTool);

@@ -1,5 +1,10 @@
 package dja.housecleaning;
 
+import java.util.List;
+
+import other.things.CleaningTool;
+import other.things.Van;
+
 public class Ronald {
 
 	public static final Ronald PERSON = new Ronald();
@@ -16,14 +21,14 @@ public class Ronald {
 		return new OrderForm();
 	}	
 
-//	public Van borrowVan (String who) {
-//		return Garage.PLACE.getVan();
-//	}
-//
-//	public List<CleaningTool> borrowTools (String who) {
-//		return Garage.PLACE.getCleaningTools();
-//	}
-//	
+	public Van borrowVan (String who) {
+		return Garage.PLACE.getVan();
+	}
+
+	public List<CleaningTool> borrowTools (String who) {
+		return Garage.PLACE.getCleaningTools();
+	}
+	
 
 	@Override
 	public String toString() {

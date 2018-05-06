@@ -13,7 +13,6 @@ import org.jline.terminal.TerminalBuilder;
 import org.jline.utils.AttributedStringBuilder;
 import org.jline.utils.AttributedStyle;
 
-import dja.housecleaning.Harry;
 import dja.housecleaning.OrderForm;
 import dja.housecleaning.Ronald;
 import other.things.CleaningTool;
@@ -22,7 +21,6 @@ import other.things.Van;
 public class Client {
 
 	public static void main(String[] args) throws IOException {
-		Harry harry = Harry.PERSON;
 		new Client();
 	}
 

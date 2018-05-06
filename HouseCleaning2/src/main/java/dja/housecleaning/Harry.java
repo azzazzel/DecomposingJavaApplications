@@ -8,7 +8,7 @@ import other.things.CleaningSupplyStore;
 import other.things.CleaningTool;
 import other.things.Van;
 
-public class Harry {
+class Harry {
 
 	public static final Harry PERSON = new Harry();
 
@@ -45,7 +45,7 @@ public class Harry {
 		System.out.println("Harry: cleaning 💦");
 		System.out.println("Harry: done cleaning 🌟");
 
-		myVan.load(neededCleaningSupplies);
+		myVan.load(neededCleaningTools);
 		myVan.load(neededCleaningSupplies);
 		myVan.addPassenger(this);
 		myVan.drive("back to my office");
