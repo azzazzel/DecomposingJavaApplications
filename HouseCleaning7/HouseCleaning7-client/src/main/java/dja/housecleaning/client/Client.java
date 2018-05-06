@@ -27,7 +27,7 @@ public class Client {
 	private Client() throws IOException {
 		
 		Terminal terminal = TerminalBuilder.terminal();
-		StringsCompleter completer = new StringsCompleter("exit", "clean", "borrowVan", "borrowTools");
+		StringsCompleter completer = new StringsCompleter("exit", "clean EUR100", "borrowVan", "borrowTools");
 		
 		LineReader reader = LineReaderBuilder.builder()
 				.terminal(terminal)
