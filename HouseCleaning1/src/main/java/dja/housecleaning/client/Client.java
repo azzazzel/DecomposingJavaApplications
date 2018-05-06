@@ -75,24 +75,4 @@ public class Client {
 
 	}
 
-	void clean() {
-
-		System.out.println("--------------------");
-		System.out.println("official way ...");
-		System.out.println("--------------------");
-
-
-	}
-
-	void harryClean() {
-
-		// then call Harry
-		System.out.println("--------------------");
-		System.out.println("call Harry ...");
-		System.out.println("--------------------");
-		Harry harryHouse = Harry.PERSON;
-		harryHouse.cleanHouse("address", "instructions", 5);
-
-	}
-
 }
